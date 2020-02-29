@@ -59,6 +59,7 @@ describe FiguresController do
     expect(Title.all.count).to eq(2)
     expect(figure.name).to eq("Doctor Who")
     expect(figure.titles).to include(title)
+
   end
 
   it "allows you to create a new figure with a new landmark" do
