@@ -1,0 +1,26 @@
+<h1><%=@figure.name%> </h1>
+<br>
+<ul>Titles:
+<%@figure.titles.each do |title|%>
+    <li> <%=title.name%></li>
+<%end%>
+</ul>
+<ul>
+Landmarks:
+<%@figure.landmarks.each do |landmark|%>
+    <li><a href="/landmarks/<%=landmark.id%>"><%=landmark.name%></a></li>
+    <%end%>
+</ul>
+
+
+<form method ="post" action="/figures/<%=@figure.id%>">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete">
+</form>
+
+<form method ="post" action="/figures/<%=@figure.id%>/edit">
+    <input type="hidden" name="_method" value="patch">
+    <input type="submit" value="Edit">
+</form>
+
+
